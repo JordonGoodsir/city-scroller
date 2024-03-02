@@ -8,7 +8,12 @@ export default function Home() {
 
       <div className="relative w-full h-screen overflow-hidden flex justify-center bg-[#225E92]">
         <div className="relative max-w-screen-xl h-screen w-full flex items-end justify-between">
-          <img className="absolute right-0 md:w-[378px] md:h-[506px] md:z-10" src="/assets/images/building3.png" />
+          <div className="absolute hidden md:block right-0 mb-20 md:z-10">
+
+            <img className="md:z-10" src="/assets/images/building3.png" />
+            <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
+
+          </div>
           {/* <img className="absolute hidden md:block left-0 w-[265px] h-[546px]" src="/assets/images/building1.png" /> */}
 
           <div className="absolute hidden md:block left-0 top-1/2">
@@ -19,7 +24,7 @@ export default function Home() {
           </div>
 
 
-          <img className="absolute hidden xl:block left-[27%] w-[103] h-[211]" src="/assets/images/building1.png" />
+          <img className="absolute hidden xl:block left-[25%] w-[103] h-[211]" src="/assets/images/building1.png" />
           <img className="absolute hidden xl:block left-[60%] w-[103] h-[211]" src="/assets/images/building1.png" />
 
 
