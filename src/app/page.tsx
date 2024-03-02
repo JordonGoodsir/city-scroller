@@ -14,7 +14,6 @@ export default function Home() {
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
 
           </div>
-          {/* <img className="absolute hidden md:block left-0 w-[265px] h-[546px]" src="/assets/images/building1.png" /> */}
 
           <div className="absolute hidden md:block left-0 top-1/2">
 
@@ -31,12 +30,10 @@ export default function Home() {
 
           {/* tall building */}
           <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:bottom-1/4">
-            <img className="mb-0 scale-125" src="/assets/images/building2.png" />
-            <div className="absolute bg-[#0B416C] w-full h-full scale-125 top-[124%]" />
+            <img className="mb-0" src="/assets/images/building2.png" />
+            <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
-          {/* #0B416C */}
-          {/* need building bottoms */}
 
 
           {/* 2 clouds */}
