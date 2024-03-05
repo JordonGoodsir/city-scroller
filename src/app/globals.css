@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.test { 
+    transform: rotate3d(0, 1, 0, 180deg);
+}
