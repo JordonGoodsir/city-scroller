@@ -4,6 +4,8 @@ const hello = 'hi'
 
 export default function Home() {
   return (
+    // designing svg animaions for lower half of site 
+
     <main className="flex min-h-screen w-full flex-col items-center justify-between overflow-auto">
 
       <div className="relative w-full h-screen overflow-hidden flex justify-center xl:flex xl:items-end bg-[#225E92]">
