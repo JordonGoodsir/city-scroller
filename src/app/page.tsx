@@ -1,14 +1,56 @@
+"use client"
+
 import Image from "next/image";
-// import { gsap } from "gsap";
-// import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 const hello = 'hi'
 
 export default function Home() {
-  // gsap.registerPlugin(MotionPathPlugin);
-  // gsap.registerPlugin(ScrollTrigger);
+
+
+  useLayoutEffect(() => {
+    console.error('ello')
+    gsap.registerPlugin(ScrollTrigger);
+
+    // const phoneTL = gsap.timeline()
+    // phoneTL.from(".check", {
+    //   y: -100, opacity: 0
+    // })
+    // phoneTL.to(".check", {
+    //   scrollTrigger: {
+    //     trigger: '#phone', scrub: true, end: 700,
+    //   markers: {
+    //     startColor: "purple",
+    //     endColor: "fuchsia",
+    //     fontSize: "4rem",
+    //     indent: 100,
+    //     fontWeight: "bold",
+    //   },
+    // }, y: 0, opacity: 1
+    // })
+
+
+
+
+    const elements = gsap.utils.toArray('.check');
+
+
+    gsap.set(elements, { opacity: 0 });
+    gsap.from(".skeleton", { opacity: 0, y: -100 });
+
+    gsap.to(".skeleton", { scrollTrigger: { trigger: "#phone", toggleActions: 'play none none reset' }, y: 0, duration: 0.3, opacity: 1, delay: 0.3 })
+
+
+    elements.forEach((element, index) => {
+      //@ts-ignore
+      gsap.to(element, { scrollTrigger: { trigger: "#phone", toggleActions: 'play none none reset' }, duration: 0.3, opacity: 1, delay: ((index + 1) * 0.3) + 0.6 })
+    })
+
+
+  })
 
   // const phoneTL = gsap.timeline()
   // console.error(phoneTL)
@@ -22,7 +64,7 @@ export default function Home() {
 
       <div id="test" className="relative w-full h-screen overflow-hidden flex justify-center xl:flex xl:items-end bg-[#225E92]">
 
-        <div className="w-full h-[265px] hidden xl:block bg-[url('/assets/images/longCloudFullWhite.png')] no-repeat absolute bottom-0" />
+        <div className="w-full h-[265px] hidden xl:block z-50 bg-[url('/assets/images/longCloudFullWhite.png')] no-repeat absolute bottom-0" />
         <div className="relative max-w-screen-xl h-screen w-full flex items-end justify-between xl:grow xl:basis-auto">
 
           <h1 className="absolute text-6xl left-1/2 z-50 -translate-x-[50%] top-1/3 md:text-8xl font-black text-white">Building</h1>
@@ -84,7 +126,7 @@ export default function Home() {
 
 
 
-      <div className="h-96">
+      <div id="phone" className="min-h-[700px]">
         <svg className="w-[200px]" width="383" height="820" viewBox="0 0 383 820" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="phone" filter="url(#filter0_d_1533_500)">
             <g clip-path="url(#clip0_1533_500)">
@@ -97,7 +139,7 @@ export default function Home() {
                       <path id="Union" opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M244 258.992H109V261.992H244V258.992ZM214 273.008H109V276.008H214V273.008Z" fill="#D1D5DB" />
                     </g>
                     <circle id="Ellipse 2" cx="319" cy="267.5" r="14" stroke="#D1D5DB" stroke-width="2" />
-                    <g className="check" style={{ animationDelay: '200ms' }}>
+                    <g className="check">
                       <circle id="Ellipse 1" cx="318.5" cy="267.5" r="14.5" fill="#0B416C" stroke="#0B416C" stroke-width="2" />
                       <g id="Approve">
                         <path d="M325.434 262.55C325.338 262.453 325.223 262.377 325.097 262.324C324.971 262.272 324.836 262.245 324.7 262.245C324.564 262.245 324.429 262.272 324.303 262.324C324.177 262.377 324.062 262.453 323.966 262.55L316.268 270.259L313.034 267.014C312.934 266.918 312.816 266.842 312.687 266.791C312.558 266.74 312.42 266.716 312.282 266.718C312.143 266.72 312.006 266.75 311.879 266.805C311.752 266.861 311.637 266.94 311.541 267.04C311.444 267.14 311.368 267.258 311.318 267.387C311.267 267.516 311.242 267.653 311.244 267.792C311.247 267.931 311.276 268.068 311.332 268.195C311.387 268.322 311.467 268.437 311.566 268.533L315.534 272.501C315.63 272.598 315.745 272.675 315.871 272.727C315.997 272.78 316.132 272.807 316.268 272.807C316.404 272.807 316.539 272.78 316.665 272.727C316.791 272.675 316.906 272.598 317.002 272.501L325.434 264.069C325.539 263.973 325.622 263.855 325.68 263.724C325.737 263.594 325.766 263.452 325.766 263.31C325.766 263.167 325.737 263.026 325.68 262.895C325.622 262.764 325.539 262.647 325.434 262.55Z" fill="white" />
@@ -110,7 +152,7 @@ export default function Home() {
                       <path id="Union_2" opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M244 328.992H109V331.992H244V328.992ZM214 343.008H109V346.008H214V343.008Z" fill="#D1D5DB" />
                     </g>
                     <circle id="Ellipse 2_2" cx="319" cy="337.5" r="14" stroke="#D1D5DB" stroke-width="2" />
-                    <g className="check" style={{ animationDelay: '400ms' }}>
+                    <g className="check">
                       <circle id="Ellipse 1_2" cx="318.5" cy="337.5" r="14.5" fill="#0B416C" stroke="#0B416C" stroke-width="2" />
                       <g id="Approve_2">
                         <path d="M325.434 332.55C325.338 332.453 325.223 332.377 325.097 332.324C324.971 332.272 324.836 332.245 324.7 332.245C324.564 332.245 324.429 332.272 324.303 332.324C324.177 332.377 324.062 332.453 323.966 332.55L316.268 340.259L313.034 337.014C312.934 336.918 312.816 336.842 312.687 336.791C312.558 336.74 312.42 336.716 312.282 336.718C312.143 336.72 312.006 336.75 311.879 336.805C311.752 336.861 311.637 336.94 311.541 337.04C311.444 337.14 311.368 337.258 311.318 337.387C311.267 337.516 311.242 337.653 311.244 337.792C311.247 337.931 311.276 338.068 311.332 338.195C311.387 338.322 311.467 338.437 311.566 338.533L315.534 342.501C315.63 342.598 315.745 342.675 315.871 342.727C315.997 342.78 316.132 342.807 316.268 342.807C316.404 342.807 316.539 342.78 316.665 342.727C316.791 342.675 316.906 342.598 317.002 342.501L325.434 334.069C325.539 333.973 325.622 333.855 325.68 333.724C325.737 333.594 325.766 333.452 325.766 333.31C325.766 333.167 325.737 333.026 325.68 332.895C325.622 332.764 325.539 332.647 325.434 332.55Z" fill="white" />
@@ -123,7 +165,7 @@ export default function Home() {
                       <path id="Union_3" opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M244 398.992H109V401.992H244V398.992ZM214 413.008H109V416.008H214V413.008Z" fill="#D1D5DB" />
                     </g>
                     <circle id="Ellipse 2_3" cx="319" cy="407.5" r="14" stroke="#D1D5DB" stroke-width="2" />
-                    <g className="check" style={{ animationDelay: '600ms' }}>
+                    <g className="check">
                       <circle id="Ellipse 1_3" cx="318.5" cy="407.5" r="14.5" fill="#0B416C" stroke="#0B416C" stroke-width="2" />
                       <g id="Approve_3">
                         <path d="M325.434 402.551C325.338 402.454 325.223 402.377 325.097 402.324C324.971 402.272 324.836 402.245 324.7 402.245C324.564 402.245 324.429 402.272 324.303 402.324C324.177 402.377 324.062 402.454 323.966 402.551L316.268 410.259L313.034 407.015C312.934 406.918 312.816 406.842 312.687 406.792C312.558 406.741 312.42 406.716 312.282 406.718C312.143 406.721 312.006 406.75 311.879 406.806C311.752 406.861 311.637 406.941 311.541 407.04C311.444 407.14 311.368 407.258 311.318 407.387C311.267 407.516 311.242 407.654 311.244 407.792C311.247 407.931 311.276 408.068 311.332 408.195C311.387 408.322 311.467 408.437 311.566 408.534L315.534 412.502C315.63 412.598 315.745 412.675 315.871 412.728C315.997 412.78 316.132 412.807 316.268 412.807C316.404 412.807 316.539 412.78 316.665 412.728C316.791 412.675 316.906 412.598 317.002 412.502L325.434 404.07C325.539 403.973 325.622 403.855 325.68 403.725C325.737 403.594 325.766 403.453 325.766 403.31C325.766 403.167 325.737 403.026 325.68 402.895C325.622 402.765 325.539 402.647 325.434 402.551Z" fill="white" />
@@ -136,7 +178,7 @@ export default function Home() {
                       <path id="Union_4" opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M244 468.992H109V471.992H244V468.992ZM214 483.008H109V486.008H214V483.008Z" fill="#D1D5DB" />
                     </g>
                     <circle id="Ellipse 2_4" cx="319" cy="477.5" r="14" stroke="#D1D5DB" stroke-width="2" />
-                    <g className="check" style={{ animationDelay: '800ms' }}>
+                    <g className="check">
                       <circle id="Ellipse 1_4" cx="318.5" cy="477.5" r="14.5" fill="#0B416C" stroke="#0B416C" stroke-width="2" />
                       <g id="Approve_4">
                         <path d="M325.434 472.551C325.338 472.454 325.223 472.377 325.097 472.324C324.971 472.272 324.836 472.245 324.7 472.245C324.564 472.245 324.429 472.272 324.303 472.324C324.177 472.377 324.062 472.454 323.966 472.551L316.268 480.259L313.034 477.015C312.934 476.918 312.816 476.842 312.687 476.792C312.558 476.741 312.42 476.716 312.282 476.718C312.143 476.721 312.006 476.75 311.879 476.806C311.752 476.861 311.637 476.941 311.541 477.04C311.444 477.14 311.368 477.258 311.318 477.387C311.267 477.516 311.242 477.654 311.244 477.792C311.247 477.931 311.276 478.068 311.332 478.195C311.387 478.322 311.467 478.437 311.566 478.534L315.534 482.502C315.63 482.598 315.745 482.675 315.871 482.728C315.997 482.78 316.132 482.807 316.268 482.807C316.404 482.807 316.539 482.78 316.665 482.728C316.791 482.675 316.906 482.598 317.002 482.502L325.434 474.07C325.539 473.973 325.622 473.855 325.68 473.725C325.737 473.594 325.766 473.453 325.766 473.31C325.766 473.167 325.737 473.026 325.68 472.895C325.622 472.765 325.539 472.647 325.434 472.551Z" fill="white" />
@@ -149,7 +191,7 @@ export default function Home() {
                       <path id="Union_5" opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M244 538.992H109V541.992H244V538.992ZM214 553.008H109V556.008H214V553.008Z" fill="#D1D5DB" />
                     </g>
                     <circle id="Ellipse 2_5" cx="319" cy="547.5" r="14" stroke="#D1D5DB" stroke-width="2" />
-                    <g className="check" style={{ animationDelay: '1000ms' }}>
+                    <g className="check">
                       <circle id="Ellipse 1_5" cx="318.5" cy="547.5" r="14.5" fill="#0B416C" stroke="#0B416C" stroke-width="2" />
                       <g id="Approve_5">
                         <path d="M325.434 542.551C325.338 542.454 325.223 542.377 325.097 542.324C324.971 542.272 324.836 542.245 324.7 542.245C324.564 542.245 324.429 542.272 324.303 542.324C324.177 542.377 324.062 542.454 323.966 542.551L316.268 550.259L313.034 547.015C312.934 546.918 312.816 546.842 312.687 546.792C312.558 546.741 312.42 546.716 312.282 546.718C312.143 546.721 312.006 546.75 311.879 546.806C311.752 546.861 311.637 546.941 311.541 547.04C311.444 547.14 311.368 547.258 311.318 547.387C311.267 547.516 311.242 547.654 311.244 547.792C311.247 547.931 311.276 548.068 311.332 548.195C311.387 548.322 311.467 548.437 311.566 548.534L315.534 552.502C315.63 552.598 315.745 552.675 315.871 552.728C315.997 552.78 316.132 552.807 316.268 552.807C316.404 552.807 316.539 552.78 316.665 552.728C316.791 552.675 316.906 552.598 317.002 552.502L325.434 544.07C325.539 543.973 325.622 543.855 325.68 543.725C325.737 543.594 325.766 543.453 325.766 543.31C325.766 543.167 325.737 543.026 325.68 542.895C325.622 542.765 325.539 542.647 325.434 542.551Z" fill="white" />
@@ -162,7 +204,7 @@ export default function Home() {
                       <path id="Union_6" opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M244 608.992H109V611.992H244V608.992ZM214 623.008H109V626.008H214V623.008Z" fill="#D1D5DB" />
                     </g>
                     <circle id="Ellipse 2_6" cx="319" cy="617.5" r="14" stroke="#D1D5DB" stroke-width="2" />
-                    <g className="check" style={{ animationDelay: '1200ms' }}>
+                    <g className="check">
                       <circle id="Ellipse 1_6" cx="318.5" cy="617.5" r="14.5" fill="#0B416C" stroke="#0B416C" stroke-width="2" />
                       <g id="Approve_6">
                         <path d="M325.434 612.551C325.338 612.454 325.223 612.377 325.097 612.324C324.971 612.272 324.836 612.245 324.7 612.245C324.564 612.245 324.429 612.272 324.303 612.324C324.177 612.377 324.062 612.454 323.966 612.551L316.268 620.259L313.034 617.015C312.934 616.918 312.816 616.842 312.687 616.792C312.558 616.741 312.42 616.716 312.282 616.718C312.143 616.721 312.006 616.75 311.879 616.806C311.752 616.861 311.637 616.941 311.541 617.04C311.444 617.14 311.368 617.258 311.318 617.387C311.267 617.516 311.242 617.654 311.244 617.792C311.247 617.931 311.276 618.068 311.332 618.195C311.387 618.322 311.467 618.437 311.566 618.534L315.534 622.502C315.63 622.598 315.745 622.675 315.871 622.728C315.997 622.78 316.132 622.807 316.268 622.807C316.404 622.807 316.539 622.78 316.665 622.728C316.791 622.675 316.906 622.598 317.002 622.502L325.434 614.07C325.539 613.973 325.622 613.855 325.68 613.725C325.737 613.594 325.766 613.453 325.766 613.31C325.766 613.167 325.737 613.026 325.68 612.895C325.622 612.765 325.539 612.647 325.434 612.551Z" fill="white" />
@@ -228,6 +270,7 @@ export default function Home() {
             </clipPath>
           </defs>
         </svg>
+
 
 
 
