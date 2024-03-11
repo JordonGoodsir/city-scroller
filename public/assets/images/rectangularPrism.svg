@@ -1,0 +1,10 @@
+<svg width="294" height="75" viewBox="0 0 294 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="rectangularPrism">
+<path id="Bottom" d="M292.545 55.6647L146.772 37.4431L1 55.6647L146.772 73.8862L292.545 55.6647Z" fill="#4D4D4D" stroke="#0B416C" stroke-miterlimit="1"/>
+<path id="Back" d="M292.545 55.6647L146.772 37.4431V1L292.545 19.2216V55.6647Z" fill="#999999" stroke="#0B416C" stroke-miterlimit="1"/>
+<path id="Left" d="M146.772 37.4431L1 55.6647V19.2216L146.772 1V37.4431Z" fill="#999999" stroke="#0B416C" stroke-miterlimit="1"/>
+<path id="Front" d="M146.772 73.8861L1 55.6645V19.2214L146.772 37.443V73.8861Z" fill="#E5E7EB" stroke="#0B416C" stroke-miterlimit="1"/>
+<path id="Right" d="M146.772 73.8861L292.545 55.6645V19.2214L146.772 37.443V73.8861Z" fill="#E5E7EB" stroke="#0B416C" stroke-miterlimit="1"/>
+<path id="Top" d="M292.545 19.2216L146.772 1L1 19.2216L146.772 37.4431L292.545 19.2216Z" fill="#E5E7EB" stroke="#0B416C" stroke-miterlimit="1"/>
+</g>
+</svg>
