@@ -21,13 +21,13 @@ export default function Home() {
     // phoneTL.to(".check", {
     //   scrollTrigger: {
     //     trigger: '#phone', scrub: true, end: 700,
-    //   markers: {
-    //     startColor: "purple",
-    //     endColor: "fuchsia",
-    //     fontSize: "4rem",
-    //     indent: 100,
-    //     fontWeight: "bold",
-    //   },
+    // markers: {
+    //   startColor: "purple",
+    //   endColor: "fuchsia",
+    //   fontSize: "4rem",
+    //   indent: 100,
+    //   fontWeight: "bold",
+    // },
     // }, y: 0, opacity: 1
     // })
 
@@ -47,17 +47,34 @@ export default function Home() {
       //@ts-ignore
       gsap.to(element, { scrollTrigger: { trigger: "#phone", toggleActions: 'play none none reset' }, duration: 0.3, opacity: 1, delay: ((index + 1) * 0.3) + 0.6 })
     })
-  }, [])
 
-  // const phoneTL = gsap.timeline()
-  // console.error(phoneTL)
-  // phoneTL.from('#test', { opacity: 1 })
-  // phoneTL.to('#test', { opacity: 0, duration: 5 })
+
+    // layers svg
+    const layersTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#layers-svg", scrub: 3, markers: true, start: "top bottom",
+        end: "bottom bottom"
+      }
+    })
+
+    layersTL.set("#highlight-rectancle", { opacity: 0 })
+    const squares = gsap.utils.toArray('.layer-square');
+
+    squares.forEach((element, index) => {
+      //@ts-ignore
+      layersTL.from(element, { opacity: 0, y: index * -20 })
+      //@ts-ignore
+      layersTL.to(element, { opacity: 1, y: 0 })
+    })
+
+    layersTL.to("#highlight-rectancle", { opacity: 1 })
+
+  }, [])
 
   return (
     // designing svg animaions for lower half of site 
 
-    <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden gap-40 mb-40">
+    <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden gap-32 mb-8">
 
       <div id="test" className="relative w-full h-screen overflow-hidden flex justify-center xl:flex xl:items-end bg-[#225E92]">
 
@@ -121,7 +138,6 @@ export default function Home() {
 
       </div>
 
-      {/* min-h-[700px] */}
 
       <div id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
 
