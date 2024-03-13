@@ -14,60 +14,28 @@ export default function Home() {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // const phoneTL = gsap.timeline()
-    // phoneTL.from(".check", {
-    //   y: -100, opacity: 0
-    // })
-    // phoneTL.to(".check", {
-    //   scrollTrigger: {
-    //     trigger: '#phone', scrub: true, end: 700,
-    // markers: {
-    //   startColor: "purple",
-    //   endColor: "fuchsia",
-    //   fontSize: "4rem",
-    //   indent: 100,
-    //   fontWeight: "bold",
-    // },
-    // }, y: 0, opacity: 1
-    // })
-
-
-
-
-    const elements = gsap.utils.toArray('.check');
-
-
-    gsap.set(elements, { opacity: 0 });
-    gsap.from(".skeleton", { opacity: 0, y: -100 });
-
-    gsap.to(".skeleton", { scrollTrigger: { trigger: "#phone", toggleActions: 'play none none reset' }, y: 0, duration: 0.3, opacity: 1, delay: 0.3 })
-
-
-    elements.forEach((element, index) => {
-      //@ts-ignore
-      gsap.to(element, { scrollTrigger: { trigger: "#phone", toggleActions: 'play none none reset' }, duration: 0.3, opacity: 1, delay: ((index + 1) * 0.3) + 0.6 })
-    })
-
-
-    // layers svg
-    const layersTL = gsap.timeline({
+    const sceneTL = gsap.timeline({
       scrollTrigger: {
-        trigger: "#layers-svg", scrub: 3, markers: true, start: "top bottom",
-        end: "bottom bottom"
+        trigger: "#scene", scrub: 1, start: "top top",
+        end: "bottom center", markers: true
       }
     })
 
-    layersTL.set("#highlight-rectancle", { opacity: 0 })
-    const squares = gsap.utils.toArray('.layer-square');
+    sceneTL.fromTo('#center-building', { y: 0 }, { y: -550 }, 0)
+    sceneTL.fromTo('#left-center-building', { y: 0 }, { y: -550 }, 0)
+    sceneTL.fromTo('#right-center-building', { y: 0 }, { y: -550 }, 0)
+    sceneTL.fromTo('#left-building', { y: 0 }, { y: -220 }, 0)
+    sceneTL.fromTo('#right-building', { y: 0 }, { y: -90 }, 0)
+    sceneTL.fromTo('#cover-cloud', { y: 80 }, { y: -800 }, 0)
+    sceneTL.fromTo('#white-backdrop', { y: 0 }, { y: -800 }, 0)
+    sceneTL.fromTo('#misty-cloud', { y: 50 }, { y: -600 }, 0)
+    sceneTL.fromTo('#separate-clouds', {y: 0},{y:-500}, 0)
 
-    squares.forEach((element, index) => {
-      //@ts-ignore
-      layersTL.from(element, { opacity: 0, y: index * -20 })
-      //@ts-ignore
-      layersTL.to(element, { opacity: 1, y: 0 })
-    })
 
-    layersTL.to("#highlight-rectancle", { opacity: 1 })
+
+
+    // sceneTL.fromTo('#tall-building', { opacity: 0 }, { opacity: 1 }, 0)
+
 
   }, [])
 
@@ -76,16 +44,15 @@ export default function Home() {
 
     <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden gap-32 mb-8">
 
-      <div id="test" className="relative w-full h-screen overflow-hidden flex justify-center xl:flex xl:items-end bg-[#225E92]">
+      <div id="scene" className="relative flex-col w-full h-screen items-center overflow-hidden flex xl:flex xl:justify-end bg-[#225E92]">
 
-        <div className="w-full h-[265px] hidden xl:block z-50 bg-[url('/assets/images/longCloudFullWhite.png')] no-repeat absolute bottom-0" />
-        <div className="relative max-w-screen-xl h-screen w-full flex items-end justify-between xl:grow xl:basis-auto">
+        {/* <div className="w-full h-[265px] hidden xl:block z-50 bg-[url('/assets/images/longCloudFullWhite.png')] no-repeat absolute bottom-0" /> */}
+        <div className="relative z-10 max-w-screen-xl h-full overflow-hidden w-full flex items-end justify-between xl:grow xl:basis-auto">
 
           <h1 className="absolute text-6xl left-1/2 z-50 -translate-x-[50%] top-1/3 md:text-8xl font-black text-white">Building</h1>
 
           {/* buildings */}
-          <div className="absolute hidden md:block left-0 z-20 top-1/2">
-
+          <div id="left-building" className="absolute hidden md:block left-0 z-20 top-1/2">
             <img className="" src="/assets/images/building4.png" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
@@ -94,25 +61,27 @@ export default function Home() {
           <img className="absolute hidden xl:block left-[25%]" src="/assets/images/building1.png" />
 
 
-          <div className="absolute hidden md:block left-[36.5%] bottom-[17%] z-20">
+          {/* <div id="center-cluster"> */}
+          <div id="left-center-building" className="absolute hidden md:block left-[36.5%] bottom-[17%] z-20">
             <img className="md:z-10" src="/assets/images/building5.png" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
-          <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:bottom-1/4">
+          <div id="center-building" className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:bottom-1/4">
             <img className="mb-0" src="/assets/images/building2.png" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
-          <div className="absolute hidden md:block left-[52%] bottom-[19%]">
+          <div id="right-center-building" className="absolute hidden md:block left-[52%] bottom-[19%]">
             <img className="md:z-10" src="/assets/images/building5.png" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
+          {/* </div> */}
 
 
           <img className="absolute hidden xl:block left-[60%]" src="/assets/images/building1.png" />
 
-          <div className="absolute right-0 mb-20 md:z-10">
+          <div id="right-building" className="absolute right-0 mb-20 md:z-10">
             <img className="md:z-10" src="/assets/images/building3.png" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
@@ -123,19 +92,19 @@ export default function Home() {
 
           {/* // clouds */}
 
-          <img className="absolute top-[30%] z-20 right-0" src="/assets/images/separate-clouds.png" />
+          <img id="separate-clouds" className="absolute top-[30%] z-20 right-0" src="/assets/images/separate-clouds.png" />
 
           <div className="absolute w-full md:w-[1280px] bottom-0 overflow-visible z-20">
-            <img className="absolute bottom-0 2xl:-bottom-[8%] z-10 w-full" src="/assets/images/coverCloud.png" />
-            <img className="z-20 w-full" src="/assets/images/longCloudFullWhite.png" />
+            <img id="misty-cloud" className="absolute bottom-0 2xl:-bottom-[8%] z-10 w-full" src="/assets/images/coverCloud.png" />
+            <img id="cover-cloud" className="z-20 w-full" src="/assets/images/longCloudFullWhite.png" />
           </div>
 
 
         </div>
-        <div className="bg-white h-[50px] z-50 absolute bottom-0 w-full" />
-
-
-
+        <div id="white-backdrop" className="w-full z-50">
+          <div className="bg-white h-[100px] w-full" />
+          <div className="bg-white z-50 w-full h-screen absolute top-full" />
+        </div>
       </div>
 
 

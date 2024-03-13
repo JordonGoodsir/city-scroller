@@ -1,7 +1,20 @@
+import { useLayoutEffect } from "react";
+import { gsap } from "gsap";
 
-const hello = 'hi'
+export default function PhoneSVG() {
+    useLayoutEffect(() => {
+        const elements = gsap.utils.toArray('.check');
 
-export default function Test() {
+        gsap.set(elements, { opacity: 0 });
+        gsap.from(".skeleton", { opacity: 0, y: -100 });
+
+        gsap.to(".skeleton", { scrollTrigger: { trigger: "#phone", toggleActions: 'play none none reset' }, y: 0, duration: 0.3, opacity: 1, delay: 0.3 })
+
+        elements.forEach((element, index) => {
+            //@ts-ignore
+            gsap.to(element, { scrollTrigger: { trigger: "#phone", toggleActions: 'play none none reset' }, duration: 0.3, opacity: 1, delay: ((index + 1) * 0.3) + 0.6 })
+        })
+    })
     return (
         <svg className="w-[200px]" viewBox="0 0 383 820" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="phone" filter="url(#filter0_d_1533_500)">

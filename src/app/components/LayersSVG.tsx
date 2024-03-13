@@ -1,6 +1,30 @@
+"use client"
+import { useLayoutEffect } from "react";
+import { gsap } from "gsap";
 
 
 export default function LayersSVG() {
+    useLayoutEffect(() => {
+        // layers svg
+        const layersTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#layers-svg", scrub: 3, start: "top bottom",
+                end: "bottom bottom"
+            }
+        })
+
+        layersTL.set("#highlight-rectancle", { opacity: 0 })
+        const squares = gsap.utils.toArray('.layer-square');
+
+        squares.forEach((element, index) => {
+            //@ts-ignore
+            layersTL.from(element, { opacity: 0, y: index * -20 })
+            //@ts-ignore
+            layersTL.to(element, { opacity: 1, y: 0 })
+        })
+
+        layersTL.to("#highlight-rectancle", { opacity: 1 })
+    })
     return (
         <svg id="layers-svg" className="w-[375px]" viewBox="0 0 520 477" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="layers">
