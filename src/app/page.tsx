@@ -2,8 +2,10 @@
 import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/all";
 import LayersSVG from "./components/LayersSVG";
 import PhoneSVG from "./components/PhoneSVG"
+import Test from "./components/Test";
 
 
 const hello = 'hi'
@@ -13,6 +15,8 @@ export default function Home() {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(TextPlugin)
+
 
     const sceneTL = gsap.timeline({
       scrollTrigger: {
@@ -29,12 +33,8 @@ export default function Home() {
     sceneTL.fromTo('#cover-cloud', { y: 80 }, { y: -800 }, 0)
     sceneTL.fromTo('#white-backdrop', { y: 0 }, { y: -800 }, 0)
     sceneTL.fromTo('#misty-cloud', { y: 50 }, { y: -600 }, 0)
-    sceneTL.fromTo('#separate-clouds', {y: 0},{y:-500}, 0)
-
-
-
-
-    // sceneTL.fromTo('#tall-building', { opacity: 0 }, { opacity: 1 }, 0)
+    sceneTL.fromTo('#separate-clouds', { y: 0 }, { y: -500 }, 0)
+    sceneTL.fromTo('#text', { text: 'Building', y: 0, color: 'red' }, { text: 'Properly', y: 400, color: 'blue' }, 0)
 
 
   }, [])
@@ -47,9 +47,9 @@ export default function Home() {
       <div id="scene" className="relative flex-col w-full h-screen items-center overflow-hidden flex xl:flex xl:justify-end bg-[#225E92]">
 
         {/* <div className="w-full h-[265px] hidden xl:block z-50 bg-[url('/assets/images/longCloudFullWhite.png')] no-repeat absolute bottom-0" /> */}
-        <div className="relative z-10 max-w-screen-xl h-full overflow-hidden w-full flex items-end justify-between xl:grow xl:basis-auto">
+        <div className="relative max-w-screen-xl h-full overflow-hidden w-full flex items-end justify-between xl:grow xl:basis-auto">
 
-          <h1 className="absolute text-6xl left-1/2 z-50 -translate-x-[50%] top-1/3 md:text-8xl font-black text-white">Building</h1>
+          <h1 id="text" className="absolute text-6xl left-1/2 z-[200] -translate-x-[50%] top-1/3 md:text-8xl font-black text-white">Building</h1>
 
           {/* buildings */}
           <div id="left-building" className="absolute hidden md:block left-0 z-20 top-1/2">
@@ -106,6 +106,7 @@ export default function Home() {
           <div className="bg-white z-50 w-full h-screen absolute top-full" />
         </div>
       </div>
+
 
 
       <div id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
