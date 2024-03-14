@@ -27,6 +27,7 @@ export default function Home() {
     sceneTL.fromTo('#left-center-building', { y: 0 }, { y: -550 }, 0)
     sceneTL.fromTo('#right-center-building', { y: 0 }, { y: -550 }, 0)
     sceneTL.fromTo('#cloud1', { y: 300 }, { y: -800 }, 0)
+    // sceneTL.fromTo('.svg-text', { y: 0 }, { y: -900 }, 0)
     sceneTL.fromTo('#left-building', { y: 0 }, { y: -220 }, 0)
     sceneTL.fromTo('#right-building', { y: 0 }, { y: -90 }, 0)
     sceneTL.fromTo('#cover-cloud', { y: 80 }, { y: -800 }, 0)
