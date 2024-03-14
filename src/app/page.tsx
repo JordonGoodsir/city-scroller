@@ -5,10 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/all";
 import LayersSVG from "./components/LayersSVG";
 import PhoneSVG from "./components/PhoneSVG"
-import Test from "./components/Test";
+import TextSVG from "./components/TextSVG";
 
-
-const hello = 'hi'
 
 export default function Home() {
 
@@ -21,13 +19,14 @@ export default function Home() {
     const sceneTL = gsap.timeline({
       scrollTrigger: {
         trigger: "#scene", scrub: 1, start: "top top",
-        end: "bottom center", markers: true
+        end: "bottom center"
       }
     })
 
     sceneTL.fromTo('#center-building', { y: 0 }, { y: -550 }, 0)
     sceneTL.fromTo('#left-center-building', { y: 0 }, { y: -550 }, 0)
     sceneTL.fromTo('#right-center-building', { y: 0 }, { y: -550 }, 0)
+    sceneTL.fromTo('#cloud1', { y: 300 }, { y: -800 }, 0)
     sceneTL.fromTo('#left-building', { y: 0 }, { y: -220 }, 0)
     sceneTL.fromTo('#right-building', { y: 0 }, { y: -90 }, 0)
     sceneTL.fromTo('#cover-cloud', { y: 80 }, { y: -800 }, 0)
@@ -49,7 +48,8 @@ export default function Home() {
         {/* <div className="w-full h-[265px] hidden xl:block z-50 bg-[url('/assets/images/longCloudFullWhite.png')] no-repeat absolute bottom-0" /> */}
         <div className="relative max-w-screen-xl h-full overflow-hidden w-full flex items-end justify-between xl:grow xl:basis-auto">
 
-          <h1 id="text" className="absolute text-6xl left-1/2 z-[200] -translate-x-[50%] top-1/3 md:text-8xl font-black text-white">Building</h1>
+          {/* <h1 id="text" className="absolute text-6xl left-1/2 z-[200] -translate-x-[50%] top-1/3 md:text-8xl font-black text-white">Building</h1> */}
+          <TextSVG />
 
           {/* buildings */}
           <div id="left-building" className="absolute hidden md:block left-0 z-20 top-1/2">
@@ -101,7 +101,7 @@ export default function Home() {
 
 
         </div>
-        <div id="white-backdrop" className="w-full z-50">
+        <div id="white-backdrop" className="w-full z-40">
           <div className="bg-white h-[100px] w-full" />
           <div className="bg-white z-50 w-full h-screen absolute top-full" />
         </div>
