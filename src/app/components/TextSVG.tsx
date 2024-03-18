@@ -13,9 +13,9 @@ export default function TextSVG() {
             <text className="svg-text text-6xl md:text-8xl font-black" fill="white" x="380" y="400">BUILDING</text>
 
 
-            <g mask="url(#m)">
+            <g mask="url(#m)" className="svg-text">
                 <rect fill="#fff" width="100%" height="100%" />
-                <text className="svg-text text-6xl md:text-8xl font-black" x="360" y="400" fill="#162a43">SMARTER</text>
+                <text className="text-6xl md:text-8xl font-black" x="360" y="400" fill="#162a43">SMARTER</text>
             </g>
 
         </svg>
