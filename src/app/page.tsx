@@ -2,7 +2,6 @@
 import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/all";
 import LayersSVG from "./components/LayersSVG";
 import PhoneSVG from "./components/PhoneSVG"
 import TextSVG from "./components/TextSVG";
@@ -13,7 +12,6 @@ export default function Home() {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(TextPlugin)
 
 
     const sceneTL = gsap.timeline({
@@ -33,7 +31,18 @@ export default function Home() {
     sceneTL.fromTo('#white-backdrop', { y: 0 }, { y: -800 }, 0)
     sceneTL.fromTo('#misty-cloud', { y: 50 }, { y: -600 }, 0)
     sceneTL.fromTo('#separate-clouds', { y: 0 }, { y: -500 }, 0)
-    sceneTL.fromTo('.svg-text', { y: 0 }, { y: 50 }, 0)
+    sceneTL.fromTo('.svg-text', { y: 0 }, { y: 100 }, 0)
+
+    // const testTl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: "#scene", scrub: 1, start: "bottom bottom",
+    //     end: "bottom bottom", markers: true
+    //   }
+    // })
+
+    // testTl.fromTo('#box', { opacity: 1 }, { opacity: 0 }, 0)
+
+
 
 
   }, [])
@@ -60,7 +69,6 @@ export default function Home() {
           <img className="absolute hidden xl:block left-[25%]" src="/assets/images/building1.png" />
 
 
-          {/* <div id="center-cluster"> */}
           <div id="left-center-building" className="absolute hidden md:block left-[36.5%] bottom-[17%] z-20">
             <img className="md:z-10" src="/assets/images/building5.png" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
@@ -75,7 +83,6 @@ export default function Home() {
             <img className="md:z-10" src="/assets/images/building5.png" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
-          {/* </div> */}
 
 
           <img className="absolute hidden xl:block left-[60%]" src="/assets/images/building1.png" />
@@ -93,20 +100,20 @@ export default function Home() {
 
           <img id="separate-clouds" className="absolute top-[30%] z-20 right-0" src="/assets/images/separate-clouds.png" />
 
-          <div className="absolute w-full md:w-[1280px] bottom-0 overflow-visible z-20">
+          <div className="absolute w-full w-[1280px] bottom-0 overflow-visible z-20">
             <img id="misty-cloud" className="absolute bottom-0 2xl:-bottom-[8%] z-10 w-full" src="/assets/images/coverCloud.png" />
-            <img id="cover-cloud" className="z-20 w-full" src="/assets/images/longCloudFullWhite.png" />
+            <img id="cover-cloud" className="z-20" src="/assets/images/longCloudFullWhite.png" />
           </div>
 
 
         </div>
         <div id="white-backdrop" className="w-full z-40">
           <div className="bg-white h-[100px] w-full" />
-          <div className="bg-white z-50 w-full h-screen absolute top-full" />
+          <div className="bg-white z-50 w-full h-[200vh] absolute top-full" />
         </div>
+
+        {/* <div id="box" className="bg-red-500 h-10 w-10 absolute bottom-0 z-50" /> */}
       </div>
-
-
 
       <div id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
 
@@ -117,7 +124,7 @@ export default function Home() {
         <p className="md:max-w-[32rem] px-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae finibus erat, non semper mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi dictum elit a odio ornare, sit amet bibendum augue congue. Praesent at augue nisl. Integer ut augue tempor, semper sapien quis, tincidunt arcu. Praesent tincidunt ligula a ipsum luctus dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
-          Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum. Ut congue turpis in nisi aliquam, nec feugiat dolor vestibulum. Aenean ornare nisl velit, id porta augue ullamcorper eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non libero ut mi efficitur sagittis nec nec lorem. Nunc maximus tempor massa sit amet ornare. Mauris a dui ac libero mollis aliquet eget pulvinar orci. Fusce eu elit elementum, laoreet ligula at, hendrerit lacus. Aliquam ut gravida dui, in faucibus ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque at molestie ligula. Nam eu convallis velit. Fusce et pellentesque mauris.
+          Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum.
         </p>
       </div>
 
@@ -129,7 +136,7 @@ export default function Home() {
         <p className="md:order-1 md:max-w-[32rem] px-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae finibus erat, non semper mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi dictum elit a odio ornare, sit amet bibendum augue congue. Praesent at augue nisl. Integer ut augue tempor, semper sapien quis, tincidunt arcu. Praesent tincidunt ligula a ipsum luctus dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
-          Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum. Ut congue turpis in nisi aliquam, nec feugiat dolor vestibulum. Aenean ornare nisl velit, id porta augue ullamcorper eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non libero ut mi efficitur sagittis nec nec lorem. Nunc maximus tempor massa sit amet ornare. Mauris a dui ac libero mollis aliquet eget pulvinar orci. Fusce eu elit elementum, laoreet ligula at, hendrerit lacus. Aliquam ut gravida dui, in faucibus ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque at molestie ligula. Nam eu convallis velit. Fusce et pellentesque mauris.
+          Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum. Ut congue turpis in nisi aliquam, nec feugiat dolor vestibulum. Aenean ornare nisl velit, id porta augue ullamcorper eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non libero ut mi efficitur sagittis nec nec lorem. Nunc maximus tempor massa sit amet ornare. Mauris a dui ac libero mollis aliquet eget pulvinar orci. Fusce eu elit elementum, laoreet ligula at, hendrerit lacus. Aliquam ut gravida dui, in faucibus ipsum.
         </p>
       </div>
 
