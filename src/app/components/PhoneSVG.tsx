@@ -17,7 +17,7 @@ export default function PhoneSVG() {
 
         phoneTL.fromTo(".skeleton", { opacity: 0, y: -100 }, { y: 0, duration: 0.3, opacity: 1, delay: 0.3 }, 0)
 
-        elements.forEach((element, index) => {
+        elements.forEach((element) => {
             //@ts-ignore
             phoneTL.to(element, { duration: 0.4, opacity: 1 })
         })
@@ -25,8 +25,6 @@ export default function PhoneSVG() {
         phoneTL.to('#cart', { rotation: 30, transformOrigin: "center center", duration: 0.1 })
         phoneTL.to('#cart', { rotation: -30, transformOrigin: "center center", duration: 0.1 })
         phoneTL.to('#cart', { rotation: 0, transformOrigin: "center center", duration: 0.1 })
-
-
 
     })
     return (

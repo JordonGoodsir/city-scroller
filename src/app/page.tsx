@@ -32,24 +32,9 @@ export default function Home() {
     sceneTL.fromTo('#misty-cloud', { y: 50 }, { y: -600 }, 0)
     sceneTL.fromTo('#separate-clouds', { y: 0 }, { y: -500 }, 0)
     sceneTL.fromTo('.svg-text', { y: 0 }, { y: 100 }, 0)
-
-    // const testTl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: "#scene", scrub: 1, start: "bottom bottom",
-    //     end: "bottom bottom", markers: true
-    //   }
-    // })
-
-    // testTl.fromTo('#box', { opacity: 1 }, { opacity: 0 }, 0)
-
-
-
-
   }, [])
 
   return (
-    // designing svg animaions for lower half of site 
-
     <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden gap-32 mb-8">
 
       <div id="scene" className="relative flex-col w-full h-screen items-center overflow-hidden flex xl:flex xl:justify-end bg-[#225E92]">
@@ -111,8 +96,6 @@ export default function Home() {
           <div className="bg-white h-[100px] w-full" />
           <div className="bg-white z-50 w-full h-[200vh] absolute top-full" />
         </div>
-
-        {/* <div id="box" className="bg-red-500 h-10 w-10 absolute bottom-0 z-50" /> */}
       </div>
 
       <div id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
