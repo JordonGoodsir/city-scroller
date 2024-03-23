@@ -6,9 +6,10 @@ import LayersSVG from "./components/LayersSVG";
 import PhoneSVG from "./components/PhoneSVG"
 import TextSVG from "./components/TextSVG";
 
+// completed 5 coderwars challanges
+
 
 export default function Home() {
-
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -78,8 +79,6 @@ export default function Home() {
           </div>
 
           <div className="w-full mb-5 hidden md:block absolute bottom-0 h-[216px] bg-[url('/assets/images/building1.png')]  bg-repeat" />
-
-
 
           {/* // clouds */}
 
