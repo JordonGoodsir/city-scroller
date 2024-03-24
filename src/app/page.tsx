@@ -6,8 +6,7 @@ import LayersSVG from "./components/LayersSVG";
 import PhoneSVG from "./components/PhoneSVG"
 import TextSVG from "./components/TextSVG";
 
-// completed 5 coderwars challanges
-
+// completed more codewars challenges and practiced for interview
 
 export default function Home() {
 

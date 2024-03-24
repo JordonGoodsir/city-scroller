@@ -1,38 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* .skeleton {
-    animation: slideInUp 1s;
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.check {
-    @apply opacity-0;
-    animation: dropIn 8s ease forwards infinite;
-}
-
-@keyframes dropIn {
-    20% {
-        opacity: 0;
-        transform: translateY(-20%);
-    }
-
-    30%,
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-} */
