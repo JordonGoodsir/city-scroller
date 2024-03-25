@@ -39,53 +39,53 @@ export default function Home() {
 
       <div id="scene" className="relative flex-col w-full h-screen items-center overflow-hidden flex xl:flex xl:justify-end bg-[#225E92]">
 
-        {/* <div className="w-full h-[265px] hidden xl:block z-50 bg-[url('/assets/images/longCloudFullWhite.png')] no-repeat absolute bottom-0" /> */}
+        {/* <div className="w-full h-[265px] hidden xl:block z-50 bg-[url('/assets/images/longCloudFullWhite.webp')] no-repeat absolute bottom-0" /> */}
         <div className="relative max-w-screen-xl h-full overflow-hidden w-full flex items-end justify-between xl:grow xl:basis-auto">
 
           <TextSVG />
 
           {/* buildings */}
           <div id="left-building" className="absolute hidden md:block left-0 z-20 top-1/2">
-            <img className="" src="/assets/images/building4.png" />
+            <img className="" src="/assets/images/building4.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
 
-          <img className="absolute hidden xl:block left-[25%]" src="/assets/images/building1.png" />
+          <img className="absolute hidden xl:block left-[25%]" src="/assets/images/building1.webp" />
 
 
           <div id="left-center-building" className="absolute hidden md:block left-[36.5%] bottom-[17%] z-20">
-            <img className="md:z-10" src="/assets/images/building5.png" />
+            <img className="md:z-10" src="/assets/images/building5.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
           <div id="center-building" className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:bottom-1/4">
-            <img className="mb-0" src="/assets/images/building2.png" />
+            <img className="mb-0" src="/assets/images/building2.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
           <div id="right-center-building" className="absolute hidden md:block left-[52%] bottom-[19%]">
-            <img className="md:z-10" src="/assets/images/building5.png" />
+            <img className="md:z-10" src="/assets/images/building5.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
 
-          <img className="absolute hidden xl:block left-[60%]" src="/assets/images/building1.png" />
+          <img className="absolute hidden xl:block left-[60%]" src="/assets/images/building1.webp" />
 
           <div id="right-building" className="absolute right-0 mb-20 md:z-10">
-            <img className="md:z-10" src="/assets/images/building3.png" />
+            <img className="md:z-10" src="/assets/images/building3.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
-          <div className="w-full mb-5 hidden md:block absolute bottom-0 h-[216px] bg-[url('/assets/images/building1.png')]  bg-repeat" />
+          <div className="w-full mb-5 hidden md:block absolute bottom-0 h-[216px] bg-[url('/assets/images/building1.webp')]  bg-repeat" />
 
           {/* // clouds */}
 
-          <img id="separate-clouds" className="absolute top-[30%] z-20 right-0" src="/assets/images/separate-clouds.png" />
+          <img id="separate-clouds" className="absolute top-[30%] z-20 right-0" src="/assets/images/separate-clouds.webp" />
 
           <div className="absolute w-full w-[1280px] bottom-0 overflow-visible z-20">
-            <img id="misty-cloud" className="absolute bottom-0 2xl:-bottom-[8%] z-10 w-full" src="/assets/images/coverCloud.png" />
-            <img id="cover-cloud" className="z-20" src="/assets/images/longCloudFullWhite.png" />
+            <img id="misty-cloud" className="absolute bottom-0 2xl:-bottom-[8%] z-10 w-full" src="/assets/images/coverCloud.webp" />
+            <img id="cover-cloud" className="z-20" src="/assets/images/longCloudFullWhite.webp" />
           </div>
 
 
