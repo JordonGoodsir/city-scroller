@@ -90,8 +90,8 @@ export default function Home() {
 
 
         </div>
-        <div id="white-backdrop" className="w-full z-40">
-          <div className="bg-white h-[100px] w-full" />
+        <div id="white-backdrop" className="w-full z-40 -mb-px">
+          <div className="bg-white h-[101px] w-full -mb-px" />
           <div className="bg-white z-50 w-full h-[200vh] absolute top-full" />
         </div>
       </div>
