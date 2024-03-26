@@ -11,20 +11,13 @@ export default function TextSVG() {
                 </g>
             </mask>
 
-            {/* <text className="svg-text text-6xl md:text-8xl font-black" fill="white" x="380" y="400">BUILDING</text> */}
             <text className="svg-text text-6xl md:text-8xl font-black" fill="white" x="20" y="600">BUILDING</text>
-
-
 
             <g mask="url(#m)" className="svg-text">
                 <rect fill="#fff" width="1200" height="100%" />
-                {/* <text className="text-6xl md:text-8xl font-black" x="360" y="400" fill="#162a43">SMARTER</text> */}
                 <text className="text-6xl md:text-8xl font-black" x="20" y="600" fill="#162a43">SMARTER</text>
-
             </g>
 
         </svg>
-
-
     );
 }
