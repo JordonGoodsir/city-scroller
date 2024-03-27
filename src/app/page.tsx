@@ -36,7 +36,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden gap-32 mb-8">
+    <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden mb-8 gap-32">
 
       <div id="scene" className="relative flex-col w-full h-screen items-center overflow-hidden flex xl:flex xl:justify-end bg-[#225E92]">
 
@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </div>
 
-      <article id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
+      <article id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl -mt-32">
 
         <div className="w-[375px] flex justify-center">
           <PhoneSVG />
