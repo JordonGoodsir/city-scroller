@@ -32,7 +32,7 @@ export default function Home() {
     sceneTL.fromTo('#misty-cloud', { y: 50 }, { y: -600 }, 0)
     sceneTL.fromTo('#separate-clouds', { y: 0 }, { y: -500 }, 0)
 
-    sceneTL.fromTo('.svg-text', { y: 0 }, { y: 100 }, 0)
+    sceneTL.fromTo('.svg-text', { y: 0 }, { y: 400 }, 0)
   }, [])
 
   return (
