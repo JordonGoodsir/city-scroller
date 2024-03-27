@@ -97,30 +97,38 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
+      <article id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
 
         <div className="w-[375px] flex justify-center">
           <PhoneSVG />
         </div>
 
-        <p className="md:max-w-[32rem] px-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae finibus erat, non semper mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi dictum elit a odio ornare, sit amet bibendum augue congue. Praesent at augue nisl. Integer ut augue tempor, semper sapien quis, tincidunt arcu. Praesent tincidunt ligula a ipsum luctus dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        <div className="md:max-w-[32rem] px-8 flex flex-col gap-5">
+          <div className="text-4xl font-bold text-[#162a43]">Fast to production</div>
 
-          Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum.
-        </p>
-      </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae finibus erat, non semper mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi dictum elit a odio ornare, sit amet bibendum augue congue. Praesent at augue nisl. Integer ut augue tempor, semper sapien quis, tincidunt arcu. Praesent tincidunt ligula a ipsum luctus dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
-      <div id="layers" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
+            Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum.
+          </p>
+        </div>
+      </article>
+
+      <article id="layers" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl">
         <div className="md:order-2">
           <LayersSVG />
         </div>
 
-        <p className="md:order-1 md:max-w-[32rem] px-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae finibus erat, non semper mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi dictum elit a odio ornare, sit amet bibendum augue congue. Praesent at augue nisl. Integer ut augue tempor, semper sapien quis, tincidunt arcu. Praesent tincidunt ligula a ipsum luctus dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        <div className="md:order-1 md:max-w-[32rem] px-8 flex flex-col gap-5">
+          <div className="text-4xl font-bold text-[#162a43]">Things I look for</div>
 
-          Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum. Ut congue turpis in nisi aliquam, nec feugiat dolor vestibulum. Aenean ornare nisl velit, id porta augue ullamcorper eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non libero ut mi efficitur sagittis nec nec lorem. Nunc maximus tempor massa sit amet ornare. Mauris a dui ac libero mollis aliquet eget pulvinar orci. Fusce eu elit elementum, laoreet ligula at, hendrerit lacus. Aliquam ut gravida dui, in faucibus ipsum.
-        </p>
-      </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae finibus erat, non semper mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi dictum elit a odio ornare, sit amet bibendum augue congue. Praesent at augue nisl. Integer ut augue tempor, semper sapien quis, tincidunt arcu. Praesent tincidunt ligula a ipsum luctus dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+            Donec interdum erat auctor, commodo nisl a, consectetur felis. Nulla sollicitudin odio a risus finibus interdum.
+          </p>
+        </div>
+      </article>
 
     </main>
   );
