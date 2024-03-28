@@ -104,7 +104,7 @@ export default function Home() {
       </div>
 
 
-    <div className="text-6xl font-bold flex justify-start w-full text-[#162a43] mb-16 px-8 items-center max-w-screen-xl">My Motivations</div>
+    <div className="text-6xl font-bold flex justify-start w-full text-[#162a43] mb-16 px-8 items-center max-w-screen-xl">My Goals</div>
 
       <article id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl mb-32">
 
