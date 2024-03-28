@@ -36,7 +36,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden mb-8 gap-32">
+    <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto overflow-x-hidden mb-8">
 
       <div id="scene" className="relative flex-col w-full h-screen items-center overflow-hidden flex xl:flex xl:justify-end bg-[#225E92]">
 
@@ -97,9 +97,18 @@ export default function Home() {
         </div>
       </div>
 
-      <article id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl -mt-32">
+      <div className="flex flex-col gap-10 items-center md:gap-0 md:flex-row md:justify-between w-full mt-[100px] mb-[200px] max-w-screen-xl">
+        <img alt="TypeScripts logo" src="/assets/images/logos/TSLogo.webp" className="h-[58px] w-[219px]" />
+        <img alt="Next.JS's logo" src="/assets/images/logos/NextLogo.webp" className="h-[58px] w-[219px]" />
+        <img alt="GSAP's logo" src="/assets/images/logos/GSAP.webp" className="h-[58px] w-[219px]" />
+      </div>
 
-        <div className="w-[375px] flex justify-center">
+
+    <div className="text-6xl font-bold flex justify-start w-full text-[#162a43] mb-16 px-8 items-center max-w-screen-xl">My Motivations</div>
+
+      <article id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl mb-32">
+
+        <div className=" w-[375px] flex justify-center">
           <PhoneSVG />
         </div>
 
