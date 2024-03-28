@@ -1,29 +1,36 @@
 "use client"
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 export default function LayersSVG() {
-    useLayoutEffect(() => {
+    useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         // layers svg
         const layersTL = gsap.timeline({
             scrollTrigger: {
-                trigger: "#layers-svg", scrub: 3, start: "top bottom",
+                trigger: "#layers-svg", scrub: 3, start: "top bottom-=100",
                 end: "bottom bottom"
             }
         })
 
         layersTL.set("#highlight-rectancle", { opacity: 0 })
         const squares = gsap.utils.toArray('.layer-square');
+        const labels = gsap.utils.toArray('.layer-label');
+
 
         squares.forEach((element, index) => {
             //@ts-ignore
             layersTL.from(element, { opacity: 0, y: index * -20 })
             //@ts-ignore
+            layersTL.from(labels[index], { opacity: 0, x: -500 })
+
+            //@ts-ignore
             layersTL.to(element, { opacity: 1, y: 0 })
+            //@ts-ignore
+            layersTL.to(labels[index], { opacity: 1, x: 0 })
         })
 
         layersTL.to("#highlight-rectancle", { opacity: 1 })
