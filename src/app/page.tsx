@@ -6,7 +6,9 @@ import LayersSVG from "./components/LayersSVG";
 import PhoneSVG from "./components/PhoneSVG"
 import TextSVG from "./components/TextSVG";
 
-// completed more codewars challenges and practiced for interview
+
+
+// completed 2 code wars challenges 
 
 export default function Home() {
 
@@ -55,17 +57,17 @@ export default function Home() {
           <img className="absolute hidden xl:block left-[25%]" src="/assets/images/building1.webp" />
 
 
-          <div id="left-center-building" className="absolute hidden md:block left-[36.5%] bottom-[17%] z-20">
+          <div id="left-center-building" className="absolute md:left-[36.5%] left-[20%] -translate-x-1/2 md:translate-x-0  bottom-[80px] md:bottom-[17%] z-20">
             <img className="md:z-10" src="/assets/images/building5.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
-          <div id="center-building" className="absolute left-0 md:left-1/2 md:-translate-x-1/2 md:bottom-1/4">
+          <div id="center-building" className="absolute left-1/2 -translate-x-1/2 bottom-[100px] md:bottom-1/4">
             <img className="mb-0" src="/assets/images/building2.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
 
-          <div id="right-center-building" className="absolute hidden md:block left-[52%] bottom-[19%]">
+          <div id="right-center-building" className="absolute bottom-[100px] left-[55%] -translate-x-1/2 md:translate-x-0 md:left-[52%] md:bottom-[19%]">
             <img className="md:z-10" src="/assets/images/building5.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
@@ -73,7 +75,7 @@ export default function Home() {
 
           <img className="absolute hidden xl:block left-[60%]" src="/assets/images/building1.webp" />
 
-          <div id="right-building" className="absolute right-0 mb-20 md:z-10">
+          <div id="right-building" className="absolute hidden md:block right-0 mb-20 md:z-10">
             <img className="md:z-10" src="/assets/images/building3.webp" />
             <div className="absolute bg-[#0B416C] w-full h-full top-[100%]" />
           </div>
@@ -97,14 +99,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-10 items-center md:gap-0 md:flex-row md:justify-between w-full mt-[100px] mb-[200px] max-w-screen-xl">
+      <div className="flex flex-col gap-40 md:gap-10 items-center md:gap-0 md:flex-row md:justify-between w-full mt-[100px] mb-[200px] max-w-screen-xl">
         <img alt="TypeScripts logo" src="/assets/images/logos/TSLogo.webp" className="h-[58px] w-[219px]" />
         <img alt="Next.JS's logo" src="/assets/images/logos/NextLogo.webp" className="h-[58px] w-[219px]" />
         <img alt="GSAP's logo" src="/assets/images/logos/GSAP.webp" className="h-[58px] w-[219px]" />
       </div>
 
 
-    <div className="text-6xl font-bold flex justify-start w-full text-[#162a43] mb-16 px-8 items-center max-w-screen-xl">My Goals</div>
+    <div className="text-6xl font-bold flex md:justify-start w-full text-[#162a43] mb-16 px-8 items-center max-w-screen-xl">My Goals</div>
 
       <article id="phone" className="flex-col md:flex-row flex gap-16 items-center max-w-screen-xl mb-32">
 
